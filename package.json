@@ -1,0 +1,22 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "db.js": "^0.15.0",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "node-fetch": "^2.1.2",
+    "request": "^2.86.0"
+  },
+  "devDependencies": {
+    "ejs": "^2.5.9"
+  }
+}

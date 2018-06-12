@@ -1,0 +1,48 @@
+[{
+    "idNode": 23167,
+    "fio": "Ros Geller",
+    "sex": "ж",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":200},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":700},{\"resource\":\"LEVEL\",\"value\":2}]"
+  }, {
+    "idNode": 23164,
+    "fio": "Monica Geller",
+    "sex": "ж",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":100},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":100},{\"resource\":\"LEVEL\",\"value\":2}]"
+  },
+  {
+    "idNode": 23165,
+    "fio": "Joey Tribbiani",
+    "sex": "ж",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":50},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":400},{\"resource\":\"LEVEL\",\"value\":2}]"
+  },
+  {
+    "idNode": 23166,
+    "fio": "Rachel Green",
+    "sex": "ж",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":300},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":600},{\"resource\":\"LEVEL\",\"value\":2}]"
+  }
+]
