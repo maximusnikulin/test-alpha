@@ -1,7 +1,3 @@
-const List = {
-
-}
-
 const Home = {
   template: `<div>Главная Страница</div>`
 }
@@ -35,33 +31,16 @@ const Top = {
       persons: this.$attrs.persons
     }
   },
-  mounted () {
-    console.log(this.persons)
-  },
   computed: {
     personsRating () {
-      const personsWithExp = this.persons.map((el) => {
-        let resources = JSON.parse(el.resources)
-        el.exp = resources.reduce((exp, next) => {
-          switch (next.resource) {
-            case 'ACTIVERATE':
-            case 'PASSIVERATE': exp += next.value
-              break
-            case 'MONEY': el.money = next.value
-              break
-          }
-          return exp
-        }, 0)
-        el.sum = el.money + el.exp
-        return el
-      })
-
-      const sortedPersonsWithExp = personsWithExp.sort((cur, next) => next.sum - cur.sum)
+      const sortedPersonsWithExp = this.$attrs.persons.slice().sort((cur, next) => next.sum - cur.sum)
 
       var j = 0
       var rate = 1
 
-      while (j < sortedPersonsWithExp.length) {
+      // rate <= 5 for only first five participants
+      // but top five it doesn't mean that list count always five
+      while (j < sortedPersonsWithExp.length && rate <= 5) {
         sortedPersonsWithExp[j].rate = rate
 
         if (j === sortedPersonsWithExp.length - 1) {
@@ -75,27 +54,55 @@ const Top = {
         j++
       }
 
-      console.log(sortedPersonsWithExp)
       return sortedPersonsWithExp
     }
   }
 }
 
 const Full = {
-  template: `<div>full</div>`
+  template: `
+    <div>
+      <table>
+        <thead> 
+          <tr>            
+            <th>Name</th>
+            <th>Status</th>
+            <th>Exp</th>
+            <th>Money</th>        
+          </tr>
+        <thead/>
+        <tbody>
+          <tr v-for="(item, index) in persons">            
+            <td>{{item.fio}}</td>
+            <td>{{item.level}}</td>
+            <td>{{item.exp}}</td>        
+            <td>{{item.money}}</td>
+          </tr>
+        </tbody> 
+      </table>
+    </div>`,
+  data () {
+    return {
+      persons: this.$attrs.persons
+    }
+  }
 }
 
 const routes = [
-  { path: '/home', component: Home, props: true},
-  { path: '/top', component: Top },
-  { path: '/full', component: Full }
+  {path: '/home', component: Home},
+  {path: '/top', component: Top},
+  {path: '/full', component: Full}
 ]
 
+// eslint-disable-next-line
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
+// eslint-disable-next-line
 var vm = new Vue({
+  el: '#app',
   data () {
     return {
       ready: false,
@@ -105,8 +112,23 @@ var vm = new Vue({
   },
   router,
   computed: {
-    rating () {
-      return []
+    personsWithExp () {
+      return this.persons.map((el) => {
+        let resources = JSON.parse(el.resources)
+        el.exp = resources.reduce((exp, next) => {
+          switch (next.resource) {
+            case 'ACTIVERATE':
+            case 'PASSIVERATE': exp += next.value
+              break
+            case 'MONEY': el.money = next.value
+              break
+          }
+          return exp
+        }, 0)
+
+        el.sum = el.money + el.exp
+        return el
+      })
     }
   },
   methods: {
@@ -124,4 +146,4 @@ var vm = new Vue({
     document.getElementById('app').classList.remove('hide')
     this.getListPersons()
   }
-}).$mount('#app')
+})

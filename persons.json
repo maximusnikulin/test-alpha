@@ -44,5 +44,29 @@
     "level": "Солдат",
     "levelOrder": 2,
     "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":300},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":600},{\"resource\":\"LEVEL\",\"value\":2}]"
+  },
+  {
+    "idNode": 23166,
+    "fio": "Phoebe Buffay",
+    "sex": "ж",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":300},{\"resource\":\"PASSIVERATE\",\"value\":400},{\"resource\":\"MONEY\",\"value\":600},{\"resource\":\"LEVEL\",\"value\":2}]"
+  },
+  {
+    "idNode": 23166,
+    "fio": "Chandler Bing",
+    "sex": "м",
+    "idParent": 23120,
+    "idRole": 1,
+    "idZone": null,
+    "idInstance": 1,
+    "level": "Солдат",
+    "levelOrder": 2,
+    "resources": "[{\"resource\":\"ACTIVERATE\",\"value\":1000},{\"resource\":\"PASSIVERATE\",\"value\":200},{\"resource\":\"MONEY\",\"value\":800},{\"resource\":\"LEVEL\",\"value\":2}]"
   }
 ]

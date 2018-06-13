@@ -8,9 +8,10 @@ app.set('views', __dirname)
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => res.render('index'))
 app.get('/persons', (req, res) => {
   res.json(persons)
 })
+app.get('/', (req, res) => res.redirect('/home'))
+app.get('*', (req, res) => res.render('index'))
 
 app.listen(3000, '0.0.0.0', () => console.log('Step by to us on 3000 port'))
